@@ -6,44 +6,31 @@ const sortColors = (arr) => {
         return 'Array should have atleast 2 elements';
     }
 
-    let i = 0;
-    let j = 0;
-    let n = arr.length;
+    let low = 0;
+    let mid = 0;
+    let high = arr.length - 1;
 
-    while(i < n) {
+    while(mid <= high) {
         let temp;
 
-        if(arr[i] == 0) {
-            temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            i++;
-            j++;
+        if(arr[mid] == 0) {
+            temp = arr[low];
+            arr[low] = arr[mid];
+            arr[mid] = temp;
+            low++;
+            mid++;
+        } else if(arr[mid] == 1) {
+            mid++;
         } else {
-            i++;
+            temp = arr[mid];
+            arr[mid] = arr[high];
+            arr[high] = temp;
+            high--;
         }
-
     }
-
-    i = j;
-
-    while(i < n) {
-        let temp;
-
-        if(arr[i] == 1) {
-            temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            i++;
-            j++;
-        } else {
-            i++;
-        }
-
-    }
-
 
     return arr;
 }
+
 
 console.log(sortColors([0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]));

@@ -1,6 +1,6 @@
 // Time Complexity is O(n)
 
-const twoSumInArray = (arr, tar) => {
+const twoSum = (arr, tar) => {
 
     if(arr.length < 2) {
         return 'Array should have atleast 2 elements';
@@ -8,7 +8,6 @@ const twoSumInArray = (arr, tar) => {
 
     let i = 0;
     let j = arr.length - 1;
-    let ans = [];
 
     while(i < j) {
         let sum = arr[i] + arr[j];
@@ -18,13 +17,12 @@ const twoSumInArray = (arr, tar) => {
         } else if(sum < tar) {
             i++;
         } else {
-            ans.push(i);
-            ans.push(j);
-            break;
+            return true;
         }
     }
 
-    return ans;
+    return false;
+
 }
 
-console.log(twoSumInArray([7, 5, 12, 14, 18, 30, 32, 50], 30));
+console.log(twoSum([7, 5, 12, 14, 18, 30, 32, 50], 50));

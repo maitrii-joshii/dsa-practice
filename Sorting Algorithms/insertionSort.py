@@ -1,21 +1,19 @@
 # Time Complexity is O(n²)
 
-def bubbleSort(arr):
+def insertionSort(arr):
     n = len(arr)
 
     for i in range(1, n):
-        swapped = False
-        for j in range(n - i):
-            if arr[j] > arr[j + 1]:
-                temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
-                swapped = True
-        if swapped == False: break
+        curr = arr[i]
+        prev = i - 1
+        while curr < arr[prev] and prev >= 0:
+            arr[prev + 1] = arr[prev]
+            prev -= 1
+        arr[prev + 1] = curr
     return arr                    
 
 
-result = bubbleSort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
+result = insertionSort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 
 print('Array before sorting: ', [23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 print(f'Array after sorting: {result}')

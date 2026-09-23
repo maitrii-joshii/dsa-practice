@@ -1,6 +1,6 @@
 # Time Complexity is O(n²)
 
-def bubbleSort(arr):
+def bubble_sort(arr):
     n = len(arr)
 
     for i in range(1, n):
@@ -12,10 +12,11 @@ def bubbleSort(arr):
                 arr[j + 1] = temp
                 swapped = True
         if swapped == False: break
+    
     return arr                    
 
 
-result = bubbleSort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
+result = bubble_sort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 
 print('Array before sorting: ', [23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 print(f'Array after sorting: {result}')

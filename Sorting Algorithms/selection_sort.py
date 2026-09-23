@@ -1,6 +1,6 @@
 # Time Complexity is O(n²)
 
-def selectionSort(arr):
+def selection_sort(arr):
     n = len(arr)
 
     for i in range(0, n - 1):
@@ -12,10 +12,11 @@ def selectionSort(arr):
             temp = arr[i]
             arr[i] = arr[min]
             arr[min] = temp
+    
     return arr                    
 
 
-result = selectionSort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
+result = selection_sort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 
 print('Array before sorting: ', [23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 print(f'Array after sorting: {result}')

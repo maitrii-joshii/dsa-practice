@@ -1,6 +1,6 @@
 # Time Complexity is O(n²)
 
-def insertionSort(arr):
+def insertion_sort(arr):
     n = len(arr)
 
     for i in range(1, n):
@@ -10,10 +10,11 @@ def insertionSort(arr):
             arr[prev + 1] = arr[prev]
             prev -= 1
         arr[prev + 1] = curr
+    
     return arr                    
 
 
-result = insertionSort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
+result = insertion_sort([23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 
 print('Array before sorting: ', [23, 5, 78, 12, 56, 9, 1, 67, 34, 88, 45, 3])
 print(f'Array after sorting: {result}')
